@@ -3,14 +3,19 @@ from datetime import datetime
 from parser import Parser
 
 @click.command()
-@click.option('--filename-out', prompt='Nome do arquivo de saída (SEM .html)' ,default=f'Blog {datetime.now().strftime("%d/%m/%Y")}', help='Especificar o nome do arquivo HTML de saída.')
+@click.option('--filename-out', prompt='Nome do arquivo de saída' ,default=f'Blog {datetime.now().strftime("%d/%m/%Y")}', help='Especificar o nome do arquivo HTML de saída.')
 @click.option('--filename-in', prompt='Nome do arquivo .txt', help='Nome (caminho) do arquivo que você tá tentando abrir (incluindo o .txt)')
 @click.option('--blog-title', prompt='Título do blog')
 def bloggen(filename_out, filename_in, blog_title):
     click.echo('BLOGGEN')
-    print(filename_out[-5:])
+    if filename_out[-5:] != '.html':
+        filename_out += '.html'
+
+    if filename_in[-4:] != '.txt':
+        filename_in += '.txt'
+        
     try:
-        with open('tests/texto2.txt', 'r', encoding='utf-8') as f:
+        with open(filename_in, 'r', encoding='utf-8') as f:
             texto = f.read()
         
     except:
