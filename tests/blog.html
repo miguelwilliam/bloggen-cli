@@ -1,12 +1,54 @@
-<div class="paragraph">
-    <p>Certa vez eu pedi uma recomendação de filmes pra uma amiga minha. Ela tem um gosto bom pra algumas coisas, e filmes é um desses fortes. Sempre acho muito pika quem é cinéfilo, os cara sempre tem uma visão muito boa de mundo e afins. Esse pedido foi meses atrás, e, pra ser sincero, eu só tinha perguntado pra puxar papo mesmo. Demoro muito pra começar a fazer essas atividades que demandam tempo.
-ENFIM, cá estamos... depois de dois meses eu parei pra assistir um dos filmes que ela tinha citado, que foi esse "In the mood for love".</p>
-</div>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Blog sobre gerar blogs</title>
+</head>
+<body>
+    <article class="blog">
+        
+    <div class="paragraph header">
+        <h1 class="blog-title">Blog sobre gerar blogs</h1>
+        <h2 class="date">22/03/2026</h2>
+    </div>
 
-<div class="paragraph">
-    <p>Eu curto muito quando eu assisto algo que eu não consigo prever muito bem como se segue, gosto de ser surpreendido e tal, e esse filme consegue ir por essa linha (quase). Quando o cara pensa num filme de romance, pelo menos eu, sempre penso que o final pode ser um de dois: ou alguém morre ou eles acabam juntos. Nesse filme a roteirização foi levando pra um caminho que tornou bemmmm difícil de prever.</p>
-</div>
+    <div class="paragraph">
+        <p>Como um incentivo para cuidar mais do meu próprio blog (e manter esse site vivo) decidi tentar criar uma extensão para me ajudar a não ter preguiça de TODA VEZ que eu for fazer um blog pra cá eu ter que criar uma cópia do template de blog que eu uso, ir adicionando as tags bonitinho, pipipi popopo...</p>
+        <p>Criei um código para transcrever um arquivo de texto para a template HTML de blogs que eu uso.</p>
+    </div>
 
-<div class="paragraph">
-    <p>A direção de arte é muito bonita mesmo, as cenas, iluminação e o pacing são bem bonitos.</p>
-</div>
+    <div class="paragraph">
+        <p>(A partir de agora pode ficar um pouquinho técnico)</p>
+    </div>
+
+    <div class="paragraph">
+        <p>Funciona quase como um parser de texto markdown p/ HTML, a diferença é que não é markdown, eu só detecto o texto puro do arquivo .txt e detecto quando há quebra de linhas: quando só tem uma quebra de linha (\n), o programa lê como uma nova linha no mesmo parágrafo, igual vai acontecer agora:</p>
+        <p>[Exemplo]</p>
+        <p>Mas quando o parser detecta que 2 linhas (ou mais) foram puladas, ele corta para outro parágrafo, igual vai acontecer agora:</p>
+    </div>
+
+    <div class="paragraph">
+        <p>[Exemplo 2]</p>
+    </div>
+
+    <div class="paragraph">
+        <p>E é isso. Quando o texto passa no código eu também passo como parâmetro o título do blog e a data (que pode ser pega por padrão) e passo o arquivo de destino. Depois disso eu posso ir no arquivo e fazer a mudança que eu quiser.</p>
+        <p>Talvez, pra um futuro, eu pense em uma forma de ter um detector de tag IMG ou Anchor ou algo mais complexo assim, mas acho que esse trabalho eu posso fazer no arquivo que o parser cospe, não é tão trabalhoso assim.</p>
+        <p>Um próximo passo também vai ser implementar o código do parser para ser usado como um comando da CLI. To aprendendo a usar o Click do python pra isso.</p>
+    </div>
+
+    <div class="paragraph">
+        <p>Esse HTML foi gerado pelo parser!! Ebaaaa</p>
+        <p>(algumas edições como adicionar itálico e tal eu fiz)</p>
+        <p>por enquanto quero tentar usar isso para tentar ser mais ativo por aqui.</p>
+    </div>
+
+    <div class="paragraph">
+        <p>PS: Pra quem viu a ultima postagem que fiz aqui, troquei o HD por um que tava jogado aqui em casa e dado como morto.. pelo visto ele não tava tão morto assim!</p>
+    </div>
+
+    </article> 
+</body>
+</html>
