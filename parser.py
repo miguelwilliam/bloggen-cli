@@ -1,5 +1,5 @@
 import re
-import datetime
+from datetime import datetime
 
 class Parser():
     @staticmethod
@@ -27,7 +27,7 @@ class Parser():
         return formatted_paragraphs
     
     @staticmethod
-    def save(blog_body:str, blog_title:str = f'BLOG {datetime.datetime.now().strftime('%d/%m/%Y')}', blog_date = f'{datetime.datetime.now().strftime('%d/%m/%Y')}', file_name:str='blog.html'):
+    def save(blog_body:str, blog_title:str = f'BLOG {datetime.now().strftime('%d/%m/%Y')}', blog_date = f'{datetime.now().strftime('%d/%m/%Y')}', file_name:str='blog.html'):
         with open(f'tests/blog_base.html', 'r', encoding='utf-8') as file:
             blog_base = file.read()
         
@@ -40,12 +40,12 @@ class Parser():
 
 # USANDO:
     
-with open('tests/texto2.txt', 'r', encoding='utf-8') as f:
-    texto = f.read()
+#with open('tests/texto2.txt', 'r', encoding='utf-8') as f:
+#    texto = f.read()
 
 #print(f'TEXTO: \n{texto}')
 
-paragrafos = Parser.getParagraphs(texto)
-f_par = Parser.formatParagraphs(paragrafos)
+#paragrafos = Parser.getParagraphs(texto)
+#f_par = Parser.formatParagraphs(paragrafos)
 
-Parser.save('\n'.join(f_par), blog_title='Blog sobre gerar blogs', file_name='blog.html')
+#Parser.save('\n'.join(f_par), blog_title='Blog sobre gerar blogs', file_name='blog.html')
