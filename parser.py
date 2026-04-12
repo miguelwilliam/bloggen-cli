@@ -1,5 +1,9 @@
 import re
+import os
+from dotenv import load_dotenv
 from datetime import datetime
+
+load_dotenv()
 
 class Parser():
     @staticmethod
@@ -35,7 +39,7 @@ class Parser():
         new_blog = re.sub(r'DD\/MM\/YYYY', blog_date, new_blog)
         new_blog = re.sub(r'{{TEXTO}}', blog_body, new_blog)
 
-        with open(f'{file_name}', 'w', encoding='utf-8') as file:
+        with open(f'{os.getenv('STANDARD_BLOG_FOLDER')}{file_name}', 'w', encoding='utf-8') as file:
             file.write(new_blog)
 
 # USANDO:
